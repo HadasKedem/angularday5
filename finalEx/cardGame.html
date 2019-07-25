@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+    <title>Hello Angular!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="gameServices.js"></script>
+    <script src="controller.js"></script>
+
+</head>
+
+<body >
+   
+<div ng-controller="gameCtrl" style="font-size: 100px">
+  
+  <table >
+        <tr>
+          <td ng-repeat="i in _cards" ng-click="clickX($index)" >{{i._x}} </td>
+        </tr>
+        <tr>
+          <td ng-repeat="n in _cards" ng-if="n._flipped === true"> {{n._number}}</td>
+          
+        </tr>
+  </table>
+
+
+</div>
+<div ng-controller="scoresCtrl">
+  guesses : {{_objectscore.guessCount}}<br>
+  correct : {{_objectscore.correctCount}}
+</div>
+
+</body>
+
+</html>
